@@ -40,6 +40,7 @@ namespace Visitare
 
             scoreBoard.ItemsSource = tablicaW;
 
+
         } 
     }
 }
