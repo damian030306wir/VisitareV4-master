@@ -9,8 +9,15 @@
              mc:Ignorable="d"
             
              x:Class="Visitare.QuestionPage">
+    
 
     <StackLayout>
+        <StackLayout>
+            <Label x:Name="punkty" Text="ZDOBYTE PUNKTY" BackgroundColor="#be8feb" TextColor="Black" FontAttributes="Bold"  HorizontalOptions="Center" />
+            <Label x:Name="label1" Text="{Binding Points}" HorizontalOptions="Center"  />
+        </StackLayout>
+
+
         <Entry x:Name="zagadkaEntry" Text="" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" ClearButtonVisibility="WhileEditing" />
         <Entry x:Name="odpowiedzEntry1" Text="" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
         <Entry x:Name="odpowiedzEntry2" Text="" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
@@ -27,10 +34,10 @@
 
 
         <Button x:Name="button" Text="Wciśnij aby rozpocząć quiz" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
-                Margin="0,50" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black">
+                Margin="0,15" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black">
 
             
-            
+
 
         </Button>
 
@@ -43,6 +50,8 @@
         </ListView>
 
     </StackLayout>
+
+   
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Tablica Wyników" 

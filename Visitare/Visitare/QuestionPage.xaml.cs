@@ -18,6 +18,8 @@ namespace Visitare
     {
         private Question question;
 
+        private readonly UserQuiz pointsManager;
+
         public bool Result { get; set; }
 
         public QuestionPage(Question question)
@@ -27,6 +29,9 @@ namespace Visitare
             this.question = question;
 
             Result = false;
+
+            pointsManager = new UserQuiz();
+            label1.BindingContext = pointsManager;
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -90,10 +95,11 @@ namespace Visitare
        {
          var questionPage = sender as QuestionPage;
          await DisplayAlert("", "Człowiek odpowiedział: " + (questionPage.Result ? "dobrze" : "źle"), "OK");
+            if (questionPage.Result)
+                pointsManager.Points += 1;
 
-            
 
-       }
+        }
 
         private async void TablicaWynikow(object sender, EventArgs e)
         {
