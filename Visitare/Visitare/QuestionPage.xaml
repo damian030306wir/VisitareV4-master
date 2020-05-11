@@ -1,22 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Visitare;assembly=Visitare"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            
+            
              mc:Ignorable="d"
+            
              x:Class="Visitare.QuestionPage">
 
     <StackLayout>
-        <Entry x:Name="zagadkaEntry" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry1" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry2" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry3" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry4" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry Keyboard= "Numeric" x:Name="odpowiedzPrawidlowa" Placeholder="Prawidlowa odpowiedz(0 to odpowiedz 1 itd.)" FontSize="Small"/>
+        <Entry x:Name="zagadkaEntry" Text="" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" ClearButtonVisibility="WhileEditing" />
+        <Entry x:Name="odpowiedzEntry1" Text="" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry2" Text="" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry3" Text="" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry4" Text="" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry Keyboard= "Numeric" x:Name="odpowiedzPrawidlowa" Text="" Placeholder="Prawidlowa odpowiedz(0 to odpowiedz 1 itd.)" FontSize="Small" MaxLength="1" >
+            <Entry.Triggers>
+                <EventTrigger Event="TextChanged">
+                    <local:NumericValidationTriggerAction />
+                </EventTrigger>
+            </Entry.Triggers>
+        </Entry>
 
 
-        <Button Text="Wciśnij aby rozpocząć quiz" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
-                Margin="0,50" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black"/>
+
+        <Button x:Name="button" Text="Wciśnij aby rozpocząć quiz" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Margin="0,50" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black">
+
+            
+            
+
+        </Button>
 
         <StackLayout>
             <Label Text="{Binding Question1}" TextColor="Black" Margin="10,0"/>
