@@ -96,7 +96,7 @@ namespace Visitare
          var questionPage = sender as QuestionPage;
          await DisplayAlert("", "Człowiek odpowiedział: " + (questionPage.Result ? "dobrze" : "źle"), "OK");
             if (questionPage.Result)
-                pointsManager.Points += 1;
+                pointsManager.Points += 10;
 
 
         }

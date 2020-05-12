@@ -45,8 +45,7 @@ namespace Visitare
                 Address = opisEntry.Text,
                 Name = "Xamarin",
                 Url = "http://xamarin.com/about/",
-                Question = zagadkaEntry.Text,
-                Answer = odpowiedzEntry.Text
+               
             };
 
             pin.MarkerClicked += async (s, args) =>
@@ -55,13 +54,14 @@ namespace Visitare
                 string pinName = ((CustomPin)s).Label;
                 // string pytanie = ((CustomPin)s).Question;
                 string opis = ((CustomPin)s).Address;
+                await DisplayAlert($"{pinName}", $"{opis}", "Anuluj");
                 // string odpowiedz = ((CustomPin)s).Answer;
-                if(await DisplayAlert($"{pinName}", $"{opis}","Quiz", "Anuluj"))
-                {
-                    await Navigation.PushAsync(new QuestionPage(new Question()));
-                }
-          
-              
+                /* if(await DisplayAlert($"{pinName}", $"{opis}","Quiz", "Anuluj"))
+                 {
+                     await Navigation.PushAsync(new QuestionPage(new Question()));
+                 }*/
+
+
             };
             customMap.CustomPins = new List<CustomPin> { pin };
             customMap.Pins.Add(pin);
@@ -131,6 +131,11 @@ namespace Visitare
             else
                 await DisplayAlert("Błąd", "Spróbuj ponownie później", "Ok");
 
+        }
+        private async void QuizForRoutes(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new QuestionPage(new Question()));
         }
 
     }

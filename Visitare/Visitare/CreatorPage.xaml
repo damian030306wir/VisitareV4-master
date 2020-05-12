@@ -18,14 +18,15 @@
 
             <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"/>
             <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"/>
-            <Entry x:Name="zagadkaEntry" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" HorizontalTextAlignment="Center"/>
-            <Entry x:Name="odpowiedzEntry" Placeholder="Oczekiwana odpowiedź:" FontSize="Small" HorizontalTextAlignment="Center"/>
+          
         </StackLayout>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="5">
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="0,0,0,0">
             <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
                 Clicked="OnClearClicked" CornerRadius="25" TextColor="Black"/>
             <Button Text="Nowa Trasa" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
                 Clicked="OnNewRouteClicked" CornerRadius="25" TextColor="Black"/>
+            <Button Text="Quiz do trasy" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
+                Clicked="QuizForRoutes" CornerRadius="25" TextColor="Black"/>
         </StackLayout>
         <StackLayout HeightRequest="450">
             <Entry x:Name="trasaEntry" Placeholder="Podaj nazwę trasy:" FontSize="Small" HorizontalTextAlignment="Center"/>
